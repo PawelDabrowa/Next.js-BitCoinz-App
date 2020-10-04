@@ -1,0 +1,33 @@
+{
+  "name": "bitcoin-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.31",
+    "@fortawesome/free-brands-svg-icons": "^5.15.0",
+    "@fortawesome/free-solid-svg-icons": "^5.15.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "autoprefixer": "9.8.6",
+    "dialog": "^0.3.1",
+    "framer-motion": "^2.7.7",
+    "isomorphic-unfetch": "^3.1.0",
+    "next": "^9.5.3",
+    "postcss-import": "^12.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-feather": "^2.0.8",
+    "tailwindcss": "^1.8.10"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^3.0.0"
+  }
+}
