@@ -7,6 +7,7 @@ import React from 'react';
 
 const HomePage = (props) => (
  <Layout>
+   <section className={'wrapper'}>
    <div className={'flex flex-col items-center pt-12 font-bold sm:text-1lg text-4xl'}>
    <h1>Welcome to BitCoinz</h1>
    </div>
@@ -29,6 +30,12 @@ const HomePage = (props) => (
     </div>
   </motion.div>
   <MediaSocial />
+  <style jsx>{`
+    .wrapper {
+      height: 200vh;
+    }
+  `}</style>
+  </section>
  </Layout>
 );
 

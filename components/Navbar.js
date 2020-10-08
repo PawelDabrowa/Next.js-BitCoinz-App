@@ -1,42 +1,53 @@
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const Navbar = () => (
+const Navbar = () => {
+
+  const [navbar,setNavbar] = useState(false);
+
+  const changeBackground = () => {
+    if(window.scrollY >= 50) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  window.addEventListener('scroll', changeBackground);
+
+  return (
  <>
-  <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-  <div className="block lg:hidden">
-    <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+  <nav className={`navbar sticky top-0 flex items-center justify-between flex-wrap p-6 ${navbar ? ' bg-red-100'  : ' bg-transparent' }`}>
+  <div className={ `run ${navbar ? 'on' :'off'}`}>
+    <button className="flex items-center px-3 py-2 border rounded text-teal-900 border-teal-900 hover:text-black hover:border-blue">
       <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
     </button>
   </div>
-  <div className="w-full hidden md:bloc flex-grow lg:flex lg:items-center lg:w-auto">
-    <div className="text-sm lg:flex-grow">
-    <Link href="/"><a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white text-xl mr-4">
+  <div className={`flex-grow justify-start flex text-center items-center w-auto menu ${navbar ? 'on' :'off'}`}>
+    <div className="m-auto">
+    <Link href="/"><a href="#responsive-header" className="inline-block text-center mt-0 text-teal-900 hover:text-white text-xl mr-4">
        Home
       </a></Link>
-      <Link href="about"><a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 text-xl hover:text-white mr-4">
+      <Link href="about"><a href="#responsive-header" className="inline-block mt-0 text-teal-900 text-xl hover:text-white text-center mr-4">
       About
       </a></Link>
-      <Link href="anime"><a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 text-xl hover:text-white mr-4">
+      <Link href="anime"><a href="#responsive-header" className=">text-center inline-block mt-0 text-teal-900 text-xl hover:text-white mr-4">
       Animation
       </a></Link>
-    </div>
-    <div>
-      <a href="#" className="inline-block text-xl px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4  lg:mt-0">Log in</a>
     </div>
   </div>
 </nav>
 
   <style jsx>{`
-    ol {
-      background: #333;
-      color: #fff;
-      display: flex;
-      flex-direction: row;
-      list-style: none;
-    }
 
+    .run.on,
+    .menu.off {
+      display: none;
+    }
+  
   `}</style>
   </>
-);
+  )};
 
 export default Navbar;
