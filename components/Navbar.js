@@ -14,7 +14,11 @@ const Navbar = () => {
     }
   };
 
-  window.addEventListener('scroll', changeBackground);
+  // window.addEventListener('scroll', changeBackground);
+
+  function scrollMoreDown300() {
+    scroll.scrollMore(300);
+  }
 
   return (
  <>
@@ -32,9 +36,10 @@ const Navbar = () => {
       <Link href="about"><a href="#responsive-header" className="inline-block mt-0 text-teal-900 text-xl hover:text-white text-center mr-4">
       About
       </a></Link>
-      <Link href="anime"><a href="#responsive-header" className=">text-center inline-block mt-0 text-teal-900 text-xl hover:text-white mr-4">
+      <Link href="anime"><a href="#responsive-header" className="text-center inline-block mt-0 text-teal-900 text-xl hover:text-white mr-4">
       Animation
       </a></Link>
+      
     </div>
   </div>
 </nav>
